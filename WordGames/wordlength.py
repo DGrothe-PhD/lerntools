@@ -10,7 +10,7 @@ wordabbr("Das Pferd frisst keinen Gurkensalat")
 
 class WordGames:
 	def __init__(self):
-		self.username = input("Wie heißt du?")
+		self.username = input("Wie heißt du? ")
 		self.points = 0
 		self.maxpoints = 0
 		print(f"Hallo {self.username}, viel Spaß beim Quizzen!")
@@ -29,9 +29,12 @@ class WordGames:
 		'''Abbreviates words to w3s'''
 		b = tx.split()
 		r = ""
-		for w in b:
-			r += w[0]+str(len(w)-2)+w[-1]
+		for q in b:
+			w = q.strip(".,;:!?\"()-")
+			abbreviation = w[0]+str(len(w)-2)+w[-1]
+			r += q.replace(w, abbreviation)
 			r += " "
+		print(r.rstrip())
 		return r.rstrip()
 	
 	def GWLEngine(self):
@@ -44,16 +47,11 @@ class WordGames:
 			else:
 				print(f"Irrtum.")
 			self.maxpoints +=1
-			print(f"small jam {self.maxpoints}")
 			self.score = int(self.points/self.maxpoints*100)
-			print(f"small jam {self.points}")
-			print(f"Aktueller Stand: {self.points} von {self.maxpoints} ({self.score} %)")
+			print(f"Aktueller Stand: {self.points} von {self.maxpoints} ({self.score} %).")
 		except:
 			print("Eingabefehler. Möglich, dass {guess} keine Zahl ist.")
 	
 	def GuessWordLength(self, num_of_rounds):
 		while self.maxpoints < num_of_rounds:
 			self.GWLEngine()
-	
-"Gib einen Text ein! z#Wie viele Buchstaben hat der Text?"
-"Konnte Eingabe nicht auswerten. Bitte noch einmal."
