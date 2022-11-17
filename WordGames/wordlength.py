@@ -1,5 +1,5 @@
 #!/usr/bin/python
-
+import os
 '''
 Calculate a word's length.
 wordabbr("internationalization")
@@ -13,6 +13,11 @@ class WordGames:
 		self.username = input("Wie heißt du? ")
 		self.points = 0
 		self.maxpoints = 0
+		self.textsamples = []
+		with open("samples.txt", "r", encoding="utf_8") as inputfile:
+			for line in inputfile:
+				if line.startswith("#"): continue
+				self.textsamples.append(line.strip())
 		print(f"Hallo {self.username}, viel Spaß beim Quizzen!")
 	
 	def wordlength(self, tx):
@@ -37,21 +42,28 @@ class WordGames:
 		print(r.rstrip())
 		return r.rstrip()
 	
-	def GWLEngine(self):
-		sample = input("Gib einen Text ein! ")
+	def GWLEngine(self, choice=True):
+		sample = ""
+		if choice or (self.maxpoints >= len(self.textsamples)):
+			sample = input("{os.linesep}Gib einen Text ein! ")
+		else:
+			sample = self.textsamples[self.maxpoints]
+			print(f"{os.linesep}Text:   {sample}")
+		
 		guess = input("Wie viele Buchstaben hat der Text? ")
+		
 		try:
 			if int(guess) == self.wordlength(sample):
 				self.points+=1
-				print(f"Richtig!")
+				print(f"{os.linesep}  Richtig!")
 			else:
-				print(f"Irrtum.")
+				print(f"{os.linesep}  Irrtum.")
 			self.maxpoints +=1
 			self.score = int(self.points/self.maxpoints*100)
 			print(f"Aktueller Stand: {self.points} von {self.maxpoints} ({self.score} %).")
 		except:
 			print("Eingabefehler. Möglich, dass {guess} keine Zahl ist.")
 	
-	def GuessWordLength(self, num_of_rounds):
+	def GuessWordLength(self, num_of_rounds, choice=True):
 		while self.maxpoints < num_of_rounds:
-			self.GWLEngine()
+			self.GWLEngine(choice)
