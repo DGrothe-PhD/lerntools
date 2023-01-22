@@ -1,8 +1,9 @@
 #!/usr/bin/python
 
-def divisors(x):
-    tset = set()
-    for t in range(1, x+1):
-        if x%t == 0:
-            tset.add(t)
-    return tset
+# Intersections of two sets:
+a = {"apple", "banana", "fruit", "cherry"}
+b = {"fruit", "vegetable", "apple", "cucumber", "tomato"}
+a & b # all that is in a and in b
+a | b # all of a or b
+a ^ b # exclusive members of a or b
+
