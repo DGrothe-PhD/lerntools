@@ -1,5 +1,6 @@
 # Dreiecke berechnen
-Eine umfassende Übersicht über verschiedene Arten, alle Größen aus einem Dreieck zu berechnen. 
+Eine umfassende Übersicht über verschiedene Arten, alle Größen aus einem Dreieck zu berechnen.
+<img src="assets/dreieck.png" width="350" alt="Allgemeines Dreieck: Entgegen dem Uhrzeigersinn\n Ecken A, B, C, zugehörige Winkel alpha, beta, gamma, gegenüberliegende Seiten a, b, c" title="Allgemeines Dreieck: Entgegen dem Uhrzeigersinn&#013;&#010;Ecken: A, B, C;&#013;&#010;zugehörige Winkel: alpha, beta, gamma,&#013;&#010;gegenüberliegende Seiten: a, b, c">
 
 Um ein Dreieck genau bestimmen zu können, müssen drei Daten darüber gegeben sein, also zum Beispiel zwei Seiten und ein Winkel (SWS) oder zwei Winkel und eine Seite. Vorgehensweise:
 
