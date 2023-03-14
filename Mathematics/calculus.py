@@ -2,6 +2,14 @@
 import primefac
 from fractions import Fraction
 
+# Sum of digits
+def SumOfDigits(i):
+    t=str(i)
+    summe = 0
+    for j in range(0,len(t)):
+        summe += int(t[j])
+    return summe
+
 # Returns all divisors of a number.
 def divisors(x):
     tset = set()
