@@ -18,7 +18,8 @@ Puh, da wird einem schnell der Bleistift stumpf&hellip;
 Lasst es uns anders angehen.
 Auf dem Zettel für seinen Wurfverlauf steht zu Beginn:
 
-![10 Striche](https://github.com/DGrothe-PhD/lerntools/blob/main/Mathematics/Stoffsammlung/assets/10Striche.png)
+<!--![10 Striche](./assets/10Striche.png x80)-->
+<img src="./assets/10Striche.png" width=30% alt="10 Striche"/>
 
 Und am Ende der Runde hat das erste N auf einem der zehn Striche zu stehen, das zweite N auf einem der übrigen neun, das dritte N auf einem der restlichen acht.
 Das ergibt dann:
@@ -29,7 +30,7 @@ Okay.  Wir müssen also sechs verschiedene Ausgänge als identisch bewerten.
 $$\tag{1}\frac{10\cdot 9\cdot 8}{6}$$
 Und, ja, was, fragt Fritz aus der hintersten Reihe, der Streber... Die übrigen sieben Treffer könnten ja auch ihre Plätze getauscht haben...
 
-$$\tag{2}\LARGE\ \ \ \frac{10\cdot 9\cdot 8}{6}\cdot \frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}$$
+$$\tag{2}\frac{10\cdot 9\cdot 8}{6}\cdot \frac{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}{7\cdot 6\cdot 5\cdot 4\cdot 3\cdot 2\cdot 1}$$
 
 
 Ist doch egal&hellip; kürzt sich sowieso wieder raus.
