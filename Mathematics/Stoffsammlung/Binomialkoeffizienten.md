@@ -17,7 +17,7 @@ Puh, da wird einem schnell der Bleistift stumpf&hellip;
 
 Lasst es uns anders angehen.
 Auf dem Zettel für seinen Wurfverlauf steht zu Beginn:
-$$\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \_$$
+$$-\,-\,-\,-\,-\,-\,-\,-\,-\,\,-$$
 Und am Ende der Runde hat das erste N auf einem der zehn Striche zu stehen, das zweite N auf einem der übrigen neun, das dritte N auf einem der restlichen acht.
 Das ergibt dann:
 $$10\cdot 9\cdot 8$$
