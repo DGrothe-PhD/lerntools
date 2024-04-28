@@ -11,3 +11,4 @@
 
 * Auf der Oder schwimmt kein Graf.
 (ou = oder, où = wo)
+* Unterm Dach ist man sicher, auf dem Baum nicht. *Sûr* = sicher, aber *sur* = auf.
