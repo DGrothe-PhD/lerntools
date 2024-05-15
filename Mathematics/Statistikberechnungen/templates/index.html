@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Statistikberechnungen</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/mainpage.css') }}">
+	</head>
+	<body>
+		<h1>Median und Quartil</h1>
+		<p>Aufgabe: Wir haben eine Zahlenreihe und sollen davon den Median und das erste und dritte Quartil berechnen.</p>
+		<form action='evalQuart' method='post'>
+			<label>Zahlenreihe eingeben (Dezimalpunkt, mit Komma getrennt)</label>
+			<input type='text' placeholder = 'Bezeichnung'
+				value='{{request.form.name}}'
+				name="name">
+			<input type='text' placeholder = 'Zahlenreihe'
+				value='{{request.form.numbers}}'
+				name="numbers">
+			<button type='submit'>Berechnen</button>
+			
+			<div class="table">{{tableofresults}}</div>
+		</form>
+	</body>
+</html>
