@@ -1,0 +1,35 @@
+body{
+	font-family:Calibri;
+	font-size: 22px;
+}
+form, input, button{
+	font-size: 22px;
+}
+h1 { font-size: 52px; color: darkseagreen; }
+
+th,td{
+	text-align:right;
+	padding:0.5em;
+}
+
+th:nth-child(4),td:nth-child(4){
+	text-align:left;
+	padding-right:3em;
+}
+div{
+	margin-top:12pt;
+}
+thead{
+	background-color: darkseagreen;
+}
+
+table, th, td{
+	border: 1px solid gray;
+	border-collapse: collapse;
+}
+tr:nth-child(even){
+	background-color: lavender;
+}
+td:hover{
+	background-color: #e7e7e7;
+}
