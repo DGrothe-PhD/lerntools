@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Statistikberechnungen</title>
+	</head>
+	<body>
+		<h1>Median und Quartil</h1>
+		<p>Aufgabe: Wir haben eine Zahlenreihe und sollen davon den Median und das erste und dritte Quartil berechnen.</p>
+		<form action='evalQuart' method='post'>
+			<label>Zahlenreihe eingeben (Dezimalpunkt, mit Komma getrennt)</label>
+			<input type='text' placeholder = 'Bezeichnung'
+				value='{{request.form.name}}'
+				name="name">
+			</input>
+			<input type='text' placeholder = 'Zahlenreihe'
+				value='{{request.form.numbers}}'
+				name="numbers">
+			</input>
+			<button type='submit'>Berechnen</button>
+			
+			<pre>{{tableofresults}}</pre>
+			<!--<table><th><td>Name</td><td>arith. Mittel</td>
+				<td>Minimum</td>
+				<td>1. Quartil</td><td>Median</td><td>3. Quartil</td>
+				<td>{{Maximum}}</td></th>
+			<tr><td>{{name}}</td><td>Avg</td>
+				<td>{{Minimum}}</td>
+				<td>{{Q1}}</td><td>{{Median}}</td><td>{{Q3}}</td>
+				<td>{{Maximum}}</td></tr>
+			</table>-->
+		</form>
+	</body>
+</html>
