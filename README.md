@@ -1,9 +1,10 @@
 # lerntools
+Verschiedene kleine Programme (C# und Python) zum Lernen und Kopfrechnen. 
 
-## Mathematikstoff
-### Geometrie: Dreiecke
-* Eine **[Übersicht](Mathematics/Stoffsammlung/Dreiecke.md)**, wie man die Größen in Dreiecken berechnet, je nach Situation, welche unterschiedliche Seiten bzw. Winkel gegeben sind.
+## Mathematik
+[Übersicht](Mathematics/Inhaltsverzeichnis.md)
 
+<details><summary>Geo Rechner</summary>
 ### Berechnung von geometrischen Formen
 Kleines Desktop-UI-Programm 🖥️ , das aus eingegebenen Parametern die Fläche sowie den Umfang bzw. ggf. andere fehlende Größen ausrechnet 📐 und dann die eingegebenen Werte überprüft ✅.
 Auch eine automatische Zeichnung geometrischer Objekte wird es geben. Diese
@@ -15,8 +16,17 @@ Verfügbare
 * Trapeze
 * Kreise
 * Rechtecke
+</details>
 
 ### Kopfrechnen
 #### WordGames
 Wortlängen-Quiz: Im Kopf ausrechnen, wie viele Buchstaben der eingegebene Text hat.
 
+## Sprachen
+[Eselsbrücken](Languages/Eselsbruecken.md)
+
+### Deutsch
+
+### Englisch
+
+### Französisch
