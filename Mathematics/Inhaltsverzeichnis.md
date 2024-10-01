@@ -3,6 +3,7 @@
 
 ### Dreiecke
 * PDF zur [Berechnung von Dreiecken](Stoffsammlung/Dreiecke.pdf)
+* Allgemeine Themen [zu Dreiecken](Stoffsammlung/UsefulReference.md)
 
 ## Kombinatorik und Statistik
 
