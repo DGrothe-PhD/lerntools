@@ -19,7 +19,8 @@ Seitenlängen **a** und **b**, sowie der Winkel dazwischen, genannt **&gamma;**,
 
 Zwei Seiten **a, b,** sowie ein anderer Winkel, **&alpha;**, seien bekannt.
 
-1. Berechne den **Winkel &beta;** über den **<font color=maroon>Sinussatz</font>**.
+1. Berechne den **Winkel &beta;** über den **<font color=maroon>Sinussatz</font>**. <br>
+Berücksichtige hierbei Angaben aus der Aufgabenstellung, ob es sich um ein spitzwinkliges Dreieck handelt. Der Sinussatz kann wegen <em>sin(&beta;) = sin(180° - &beta;)</em> zwei Lösungen liefern.
 2. Berechne den **<font color=darkgreen>dritten Winkel</font>, &gamma;**, daraus, dass die Summe der drei Winkel 180° beträgt.
 3. Berechne die **Seitenlänge c** über den **<font color=maroon>Sinussatz</font>**.
 4. Höhe und Flächeninhalt berechnen.
