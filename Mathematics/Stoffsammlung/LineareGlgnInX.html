@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Math.js Gleichungsrechner</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
+  <!-- Carefully take https://mathjs.org/examples/algebra.js.html as a documentation.-->
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 20px;
+    }
+    input, button {
+      padding: 8px;
+      font-size: 16px;
+    }
+    #output {
+      margin-top: 20px;
+      padding: 10px;
+      background: #f4f4f4;
+      border-radius: 6px;
+      white-space: pre-wrap;
+    }
+    .highlight {
+      border-radius: 25px;
+      color: #AD7700;
+      border: 2px solid #AD7700;
+      width: 200px;
+      padding-left: 8px;
+      padding-right: 8px;
+      height: 150px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Math.js Gleichungsrechner</h2>
+  <p>Beispiel: <code>2x + 7 = 3x + 8</code></p>
+  
+  <input type="text" id="equation" placeholder="Gib eine Gleichung ein, z.B. 2x + 7 = 3x + 8" size="40">
+  <button onclick="calculate()">Berechnen</button>
+
+  <div id="output"></div>
+
+  <script>
+    function calculate() {
+      const input = document.getElementById("equation").value;
+      const output = document.getElementById("output");
+      try {
+        if (input.includes('=')) {
+          // math.parseEquationString() braucht LHS und RHS
+          const [lhs, rhs] = input.split('=');
+          //const solution = math.solveEquation(lhs + " = " + rhs, "x");
+          const simplified = math.simplify(lhs).toString() + " = " + math.simplify(rhs).toString();
+          //output.innerText = "Vereinfachung:\n x = " + solution.toString();
+          output.innerHTML = "<h2>Vereinfachung:</h2>" + simplified.toString();
+          const nextStep = simplified.toString().replace(" = ", " - (") + ")";
+          //const solved = math.simplify( 
+          output.innerHTML += "<br>" + nextStep.toString();
+          const finalStep = math.simplify( nextStep.toString()).toString();
+          const a0 = math.evaluate(finalStep, {x: 0}).toString();
+          let result = "";
+          let a1 = "";
+          if(finalStep.includes("x")){
+            a1 = math.simplify(`(${finalStep}- ${a0})/x`).toString();
+            result += "x = " + math.simplify(`(-1)*(${a0}/${a1})`).toString();
+          }
+          else if(finalStep === "0"){result = "allgemein lösbar";}
+          else{result = "nicht lösbar";}
+          output.innerHTML += "<br>" + finalStep.toString();
+          output.innerHTML += "<br><br><span class='highlight'>Beta</span> ";
+          output.innerHTML += result.toString();
+        } else {
+          const simplified = math.simplify(input).toString();
+          const evaluated = math.evaluate(input);
+          output.innerText = "Vereinfacht: " + simplified + "\nErgebnis: " + evaluated;
+        }
+      } catch (err) {
+        output.innerText = "Fehler: " + err.message;
+      }
+    }
+  </script>
+</body>
+</html>
