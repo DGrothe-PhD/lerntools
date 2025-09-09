@@ -2,6 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <title>Math.js Gleichungsrechner</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/11.11.0/math.min.js"></script>
   <!-- Carefully take https://mathjs.org/examples/algebra.js.html as a documentation.-->
@@ -18,7 +19,6 @@
     #output {
       margin-top: 20px;
       padding: 10px;
-      background: #f4f4f4;
       border-radius: 6px;
       white-space: pre-wrap;
     }
@@ -38,9 +38,11 @@
   <p>Beispiel: <code>2x + 7 = 3x + 8</code></p>
   
   <input type="text" id="equation" placeholder="Gib eine Gleichung ein, z.B. 2x + 7 = 3x + 8" size="40">
-  <button onclick="calculate()">Berechnen</button>
+  <button onclick="calculate()">Berechnen</button><br>
+  <button onclick="wertetabelle()">Wertetabelle</button>
 
   <div id="output"></div>
+  <div id="wertetabelle"></div>
 
   <script>
     function calculate() {
@@ -78,6 +80,36 @@
       } catch (err) {
         output.innerText = "Fehler: " + err.message;
       }
+    }
+    
+    function round(value){
+      return math.round(value*1000)/1000;
+    }
+    function wertetabelle(){
+      const input = document.getElementById("equation").value;
+      const [lhs, rhs] = input.split('=');
+      const theMathFunction = math.simplify( lhs.toString()).toString();
+      let stellen = "<table><tr><th>x = </th>";
+      let werte = "<tr><td>f(x) = </td>";
+      let stellenPart2 = "<table><tr><th>x = </th>";
+      let wertePart2 = "<tr><td>f(x) = </td>";
+      for(i=-12;i<1;i++){
+        let y0 = "<td>" + round(math.evaluate(theMathFunction, {x: i/2.0})).toString() + "</td>";
+        let x0 = "<th>" + (i/2.0).toString() + "</th>";
+        stellen += x0;
+        werte += y0;
+      }
+      for(i=1;i<13;i++){
+        let y0 = "<td>" + round(math.evaluate(theMathFunction, {x: i/2.0})).toString() + "</td>";
+        let x0 = "<th>" + (i/2.0).toString() + "</th>";
+        stellenPart2 += x0;
+        wertePart2 += y0;
+      }
+      stellen += "</tr>\n";
+      werte += "</tr></table><br>\n";
+      stellenPart2 += "</tr>\n";
+      wertePart2 += "</tr></table>\n";
+      document.getElementById("wertetabelle").innerHTML = stellen + werte + stellenPart2 + wertePart2;
     }
   </script>
 </body>

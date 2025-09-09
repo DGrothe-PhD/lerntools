@@ -20,10 +20,27 @@ div {
   padding-top:1em;
   padding-bottom:1em;
   margin:2em;
+  background: #fef8f8;
 }
 button, img, .img-lost{
   margin-left:1em;
 }
 input{
   margin-right:1em;
+}
+
+table, th, td {
+  border: 2px solid coral;
+  border-collapse: collapse;
+  padding: 7px;
+}
+th{
+  min-width: 1.5em;
+}
+th:nth-child(odd), td:nth-child(odd){
+  background-color: papayawhip;
+}
+th:nth-child(1), td:nth-child(1){
+  background-color: sandybrown;
+  font-weight: bold;
 }
